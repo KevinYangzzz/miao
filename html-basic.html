@@ -251,12 +251,14 @@
 
   <script>
     let gif = document.createElement('div')
-    gif.classList.add('gif')
-    document.body.insertBefore(gif, document.body.firstElementChild);
     let gandiao = document.querySelector('.gif')
-    setTimeout(function(){ 
-      gandiao.style.visibility = 'hidden'
-    }, 3000)
+    gif.classList.add('gif')
+    gif.addEventListener('mousemove', function(){
+      gif.style.visibility = 'hidden'
+    })
+    document.body.insertBefore(gif, document.body.firstElementChild)
+
+    
   </script>
 </body>
 </html>
