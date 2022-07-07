@@ -23,6 +23,8 @@
   </style>
 </head>
 <body>
+  <div class="gif"></div>
+
   <h1>lorem</h1>
 
   <h2>Lorem, ipsum.</h2>
@@ -250,15 +252,10 @@
   >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<< &lt;span>&lt;/span>
 
   <script>
-    let gif = document.createElement('div')
-    let gandiao = document.querySelector('.gif')
-    gif.classList.add('gif')
-    gif.addEventListener('mousemove', function(){
+    let gif = document.querySelector('.gif')
+    gif.addEventListener('mouseenter', function(){
       gif.style.visibility = 'hidden'
     })
-    document.body.insertBefore(gif, document.body.firstElementChild)
-
-    
   </script>
 </body>
 </html>
