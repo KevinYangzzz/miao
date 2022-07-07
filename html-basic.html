@@ -258,10 +258,11 @@
 
   <script>
     let gif = document.querySelector('.gif')
-    gif.addEventListener('mouseenter', function(){
+
+    document.body.addEventListener('mouseenter', function(){
       gif.style.visibility = 'hidden'
     })
-    gif.addEventListener('mouseleave', function(){
+    document.body.addEventListener('mouseleave', function(){
       gif.style.visibility = 'visible'
     })
   </script>
