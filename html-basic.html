@@ -24,6 +24,7 @@
       background-image: url(./皮卡丘.gif);
       background-repeat: no-repeat;
       background-size: cover;
+      z-index: 1;
     }
   </style>
 </head>
@@ -260,10 +261,10 @@
     let gif = document.querySelector('.gif')
 
     document.body.addEventListener('mouseenter', function(){
-      gif.style.display = 'none'
+      gif.style.visibility = 'hidden'
     })
     document.body.addEventListener('mouseleave', function(){
-      gif.style.display = 'block'
+      gif.style.visibility = 'visible'
     })
   </script>
 </body>
