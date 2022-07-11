@@ -56,14 +56,61 @@
       border: 10px solid #000;
       border-radius: 8px;
     }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #door {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    #door::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -5px;
+      bottom: -5px;
+      z-index: 1;
+
+      background: linear-gradient(90deg,pink,blue,pink,blue);
+      background-size: 400%;
+      filter: blur(20px);
+
+      animation: sun 8s infinite;
+    }
+
+    @keyframes sun{
+      100%{
+        background-position: -400% 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <div id="door"></div>
   <div class="box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, consectetur?</div>
   <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt!</div>
   <div class="box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt!</div>
   <div class="box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quisquam, nesciunt!</div>
   <div class="box5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt!</div>
   <div class="box6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt!</div>
+
+  <script>
+    let door = document.getElementById('door')
+    let doorPseudo = window.getComputedStyle(door, "::before")
+    // console.log(doorPseudo);
+    document.body.addEventListener('mouseenter', function(){
+      door.style.display = 'none';
+    })
+
+    document.body.addEventListener('mouseleave', function(){
+      door.style.display = 'block';
+    })
+  </script>
 </body>
 </html>
