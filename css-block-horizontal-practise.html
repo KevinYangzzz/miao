@@ -42,7 +42,10 @@
     .box5 {
       margin: 30px auto;
       width: 50%;
-      border: 5px dashed magenta;
+      border-left: 5px dashed magenta;
+      border-top: 5px dashed magenta;
+      border-right: 5px dotted magenta;
+      border-bottom: 5px dotted magenta;
     }
 
     .box6 {
@@ -100,7 +103,7 @@
   <script>
     let door = document.getElementById('door')
     let doorPseudo = window.getComputedStyle(door, "::before")
-    
+
     // console.log(doorPseudo);
 
     document.body.addEventListener('mouseenter', function(){
