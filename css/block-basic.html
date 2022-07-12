@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .box1 {
+      margin: 30px;
+      width: auto;
+
+      background-color: red;
+    }
+
+    .box2 {
+      margin: auto;
+      width: 400px;
+      height: 260px;
+      border: 1px solid #000;
+
+      overflow: hidden;
+    }
+
+    .box2 div {
+      margin: 20px;
+      height: 80px;
+      overflow-y: scroll;
+    }
+
+    .box2 .middle {
+      height: 20px;
+
+      overflow: hidden;
+      background-color: pink;
+    }
+
+    .box2 .middle:hover {
+      margin: 20px 0;
+    }
+
+    .box3 {
+      margin: 30px auto;
+      width: 0;
+      height: 30px;
+      border-top: 80px solid #fff;
+      border-bottom: 80px solid orange;
+      border-left: 80px solid #fff;
+      border-right: 80px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magnam tempore rem minus expedita maxime ipsa ab, molestias harum explicabo perferendis dolor necessitatibus aut, dolores quibusdam, consectetur reprehenderit fugiat itaque.</div>
+
+  <div class="box2">
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi laboriosam consectetur distinctio laudantium dolore incidunt deleniti molestias nisi quia sit. Fugiat aliquid totam voluptatibus soluta fugit in odio provident ab!</div>
+
+    <div class="middle"></div>
+    
+    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem aliquam provident fugit est nobis adipisci omnis magni dolorem accusantium, nam nisi neque distinctio animi aut? Ipsam tempore quo minima tenetur?</div>
+  </div>
+    
+
+  <div class="box3"></div>
+</body>
+</html>
