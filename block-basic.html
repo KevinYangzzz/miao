@@ -7,8 +7,11 @@
   <title>Document</title>
 
   <style>
+    body {
+      margin: 0;
+    }
     .box1 {
-      margin: 30px;
+      margin: 30px auto;
       width: auto;
 
       background-color: red;
@@ -16,16 +19,17 @@
 
     .box2 {
       margin: auto;
-      width: 400px;
-      height: 260px;
+      max-width: 600px;
       border: 1px solid #000;
 
-      overflow: hidden;
+      /* box-sizing: border-box; */
+      /* overflow: hidden; */
     }
 
     .box2 div {
-      margin: 20px;
+      margin: 10px;
       height: 80px;
+
       overflow-y: scroll;
     }
 
