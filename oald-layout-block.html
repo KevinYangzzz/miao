@@ -36,10 +36,12 @@
     }
 
     .aside {
+      display: inline-block;
       width: 200px;
-      height: 700px;
+      height: 100vh;
       background-color: pink;
       border: 1px solid #000;
+      overflow: auto;
     }
 
     .aside h1 {
@@ -59,7 +61,6 @@
       width: 35px;
       height: 25px;
       vertical-align: middle;
-
     }
 
     .aside ul {
@@ -70,13 +71,12 @@
     }
 
     .entry {
-      margin-left: 200px;
-      margin-top: -700px;
-      min-width: 330px;
+      display: inline-block;
       width: calc(100% - 600px);
-      height: 700px;
+      height: 100vh;
       background-color: cornsilk ;
       border: 1px solid #000;
+      overflow: auto;
     }
 
     .entry .word{
@@ -86,33 +86,33 @@
     }
 
     .entry .definition {
-      height: 610px;
+      height: calc(100vh - 90px);
       padding-left: 30px;
       padding-top: 10px;
       overflow: auto;
     }
     .vocabulary {
-      margin-left: calc(100% - 400px);
-      margin-top: -700px;
+      display: inline-block;
       width: 200px;
-      height: 700px;
+      height: 100vh;
       background-color: pink;
       border: 1px solid #000;
+      overflow: auto;
     }
 
     .history {
-      margin-left: calc(100% - 200px);
-      margin-top: -700px;
+      display: inline-block;
       width: 200px;
-      height: 700px;
+      height: 100vh;
       background-color: pink;
       border: 1px solid #000;
       font-size: 24px;
+      overflow: auto;
     }
   </style>
 </head>
 <body>
-  <div class="aside">
+  <span class="aside">
     <h1>OALD Se7en</h1>
     <input type="text"><button></button>
     <ul>
@@ -176,9 +176,7 @@
       <li><a href="">word58</a></li>
       <li><a href="">word59</a></li>
       <li><a href="">word60</a></li>
-    </ul>
-  </div>
-  <div class="entry">
+    </ul></span><span class="entry">
     <div class="word"><h1>fantasy</h1></div>
     <div class="definition">
     <p>1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, numquam voluptatibus aspernatur nam quidem inventore, incidunt temporibus odit voluptate suscipit nisi dolores labore doloribus eum? Odio id error neque ullam?</p><br>
@@ -202,12 +200,10 @@
     <p>19.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, numquam voluptatibus aspernatur nam quidem inventore, incidunt temporibus odit voluptate suscipit nisi dolores labore doloribus eum? Odio id error neque ullam?</p><br>
     <p>20.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, numquam voluptatibus aspernatur nam quidem inventore, incidunt temporibus odit voluptate suscipit nisi dolores labore doloribus eum? Odio id error neque ullam?</p>
     </div>
-  </div>
-  <div class="vocabulary">
+  </span><span class="vocabulary">
     <h1>Vocabulary</h1>
-  </div>
-  <div class="history">
+  </span><span class="history">
     <h1>History</h1>
-  </div>
+  </span>
 </body>
 </html>
