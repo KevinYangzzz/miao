@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body, ul, li {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+      color: rgb(87, 87, 87);
+    }
+
+    nav {
+      position: relative;
+
+      padding: 3px;
+      height: 30px;
+
+      background-color: rgb(221, 221, 221);
+      box-sizing: border-box;
+    }
+
+    nav img {
+      float: left;
+      height: 24px;
+    }
+
+    nav .items > li{
+      float: left;
+      margin-left: 20px;
+
+      height: 24px;
+
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .items > li:hover {
+    background-color: rgb(205, 205, 205);
+    }
+
+
+    .file:hover > .subMenu{
+      display: block;
+    }
+
+    nav .file span {
+      position: relative;
+    }
+    nav .subMenu {
+      position: absolute;
+      top: 25px;
+
+      display: none;
+      padding: 10px 10px;
+      width: 300px;
+
+      background-color: #fff;
+      box-shadow: -1px 0 0 white, 0 1px 0 white, 0 1px 0 white, 1px 0 5px grey;
+      border-radius: 5px;
+    }
+
+    nav .subMenu li{
+      height: 30px;
+    }
+
+    nav .subMenu li:hover {
+      color: white;
+      background-color: rgb(0, 96, 192);
+    }
+
+    nav .subMenu li span:first-child {
+      float: left;
+    }
+
+    .fl{
+      float: right;
+    }
+
+
+
+    nav .openRecent {
+      position: relative;
+    }
+
+
+    nav .openRecent:hover > .subSubMenu {
+      display: block;
+    }
+    nav .subSubMenu {
+      position: absolute;
+      top: -10px;
+      left: 315px;
+
+      display: none;
+      padding: 10px 10px;
+      width: 120px;
+
+      box-shadow: -1px 0 0 white, 0 1px 0 white, 0 1px 0 white, 1px 0 5px grey;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="./vscode_icon.svg" alt="">
+
+    <ul class="items">
+
+      <li class="file"><span>File</span>
+
+        <ul class="subMenu">
+          <li><span>New Text File</span><span class="fl">Ctrl+N</span></li>
+          <li><span>New File...</span><span class="fl">Ctrl+Alt+Windows+N</span></li>
+          <li><span>New Window</span><span class="fl">Ctrl+Shift+N</span></li>
+
+          <li class="openRecent">
+
+            <span>Open Recent</span>
+            <span class="fl">></span>
+
+            <ul class="subSubMenu">
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+              <li>d</li>
+            </ul>
+
+          </li>
+        </ul>
+
+      </li>
+      <li>Edit</li>
+      <li>Selection</li>
+      <li>View</li>
+      <li>Go</li>
+      <li>Run</li>
+      <li>Terminal</li>
+      <li>Help</li>
+    </ul>
+  </nav>
+</body>
+</html>
