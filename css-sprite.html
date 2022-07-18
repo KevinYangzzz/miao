@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo {
+      margin: 60px auto 100px auto;
+      width: 263px;
+      height: 36px;
+      background-image: url(./css-sprite.png);
+      background-position: -567px -80px;
+    }
+
+    .search {
+      position: relative;
+      margin: 0 auto;
+      min-width: 463px;
+      width: 45%;
+      border: 1px solid grey;
+      border-radius: 23px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 45px;
+      height: 33px;
+      background-image: url(./css-sprite.png);
+      background-position: -79px 3px;
+    }
+
+    input {
+      margin: 0 50px;
+      width: calc(100% - 90px);
+      height: 38px;
+      border: 0;
+      font-size: 23px;
+    }
+
+    input:focus-visible {
+      outline: 0;
+    }
+
+    .voice-icon {
+      position: absolute;
+      right: -4px;
+      top: 0;
+      width: 50px;
+      height: 42px;
+      background-image: url(./css-sprite.png);
+      background-position: -38px 3px;
+    }
+
+    .setting {
+      position: absolute;
+      top: 0;
+      right: 55px;
+      width: 50px;
+      height: 42px;
+      background-image: url(./css-sprite.png);
+      background-position: -198px 11px;
+    }
+
+    .user {
+      position: absolute;
+      top: 7px;
+      right: 10px;
+      width: 46px;
+      height: 36px;
+      background-image: url(./css-sprite.png);
+      background-position: -1336px -16px;
+    }
+  </style>
+      
+</head>
+<body>
+  <div class="logo"></div>
+  <div class="search">
+    <div class="search-icon"></div>
+    <input type="text" placeholder="Google一下，你就知道">
+    <div class="voice-icon"></div>
+  </div>
+  <div class="setting"></div>
+  <div class="user"></div>
+</body>
+</html>
