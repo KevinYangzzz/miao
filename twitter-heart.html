@@ -19,7 +19,7 @@
       content: attr(data-title);
       position: absolute;
       top: 70px;
-      left: -102px;
+      left: -100px;
       width: 260px;
       font-size: 12px;
     }
@@ -41,7 +41,7 @@
 </head>
 <body>
   <div class="heart" data-title="不要走好吗？———1000米体测时，体育老师说">
-    <span class="count">348</span>
+    <span class="count">399</span>
   </div>
 
   <script>
@@ -50,7 +50,8 @@
 
     heart.addEventListener('click', function(){
       heart.classList.add("heart-transition");
-      count.innerHTML = "349";
+      heart.style.caretColor = 'pink';
+      count.innerHTML = +count.innerHTML + 1;
     })
 </script>
 </body>
