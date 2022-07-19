@@ -15,6 +15,15 @@
       cursor: pointer;
     }
 
+    .heart:hover::after {
+      content: attr(data-title);
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      width: 300px;
+      font-size: 12px;
+    }
+
     .count {
       position: absolute;
       left: 80px;
@@ -31,7 +40,7 @@
     
 </head>
 <body>
-  <div class="heart">
+  <div class="heart" data-title="不要走好吗？———1000米体测时，体育老师说">
     <span class="count">348</span>
   </div>
 
