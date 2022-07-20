@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .toggle {
+      position: relative;
+      margin: 40px auto;
+      padding: 3px;
+      width: 130px;
+      height: 60px;
+      border: 2px solid grey;
+      box-sizing: border-box;
+
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 2s;
+    }
+    
+    .circle {
+      width: 50px;
+      height: 50px;
+
+      background-color: #fff;
+      border-radius: 50px;
+      box-shadow: 4px 3px 10px grey;
+      transition: all 1.5s;
+    }
+
+    .toggle-transition {
+      border: 1px solid rgb(48, 273, 77);
+      background-color: rgb(48, 273, 77);
+    }
+
+    .circle-transition{
+      margin-left: 80px;
+    }
+
+    .toggle::before {
+      content: "启动核打击";
+      position: absolute;
+      top: 8px;
+      left: -170px;
+
+      font-weight: lighter;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+    <div class="toggle">
+      <div class="circle"></div>
+    </div>
+
+  <script>
+    let toggle = document.querySelector(".toggle");
+    let circle = document.querySelector(".circle");
+    let flag = false;
+    toggle.addEventListener('click', function(){
+      if (flag === true) {
+        toggle.classList.remove("toggle-transition");
+        circle.classList.remove("circle-transition");
+      } else {
+        toggle.classList.add("toggle-transition");
+        circle.classList.add("circle-transition");
+      }
+
+      flag = !flag;
+    })
+  </script>
+</body>
+</html>

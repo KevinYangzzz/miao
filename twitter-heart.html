@@ -33,7 +33,7 @@
     }
 
     .heart-transition {
-      transition: all 2s steps(28);
+      transition: all 1s steps(28);
       background-position: -2800px 0;
     }
   </style>
@@ -50,7 +50,6 @@
 
     heart.addEventListener('click', function(){
       heart.classList.add("heart-transition");
-      heart.style.caretColor = 'pink';
       count.innerHTML = +count.innerHTML + 1;
     })
 </script>
