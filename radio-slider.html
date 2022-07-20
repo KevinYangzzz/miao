@@ -17,8 +17,9 @@
       overflow: hidden;
       }
     }
-    
-    .slider {
+
+    @media screen and (min-width: 202px){
+      .slider {
       position: relative;
       margin: 40px auto;
       width: 1226px;
@@ -27,6 +28,7 @@
       white-space: nowrap;
       overflow: hidden;
       }
+    }
 
     .slider img {
       position: absolute;
@@ -38,16 +40,17 @@
       position: absolute;
       top: 90%;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -50%);
     }
 
     .slider .indicators .indicator {
       display: inline-block;
-      margin-right: 20px;
-      width: 20px;
-      height: 20px;
+      margin-right: 1vw;
+      width: 2vw;
+      height: 2vw;
       background-color: rgb(233, 233, 233, .5);
       border-radius: 20px;
+      cursor: pointer;
     }
 
     .slider input {
@@ -65,9 +68,10 @@
     input:nth-child(1):checked ~ .indicators label:nth-child(1),
     input:nth-child(2):checked ~ .indicators label:nth-child(2),
     input:nth-child(3):checked ~ .indicators label:nth-child(3),
-    input:nth-child(4):checked ~ .indicators label:nth-child(4) {
-        background-color: rgba(0, 0, 0, .3);
-}
+    input:nth-child(4):checked ~ .indicators label:nth-child(4),
+    input:nth-child(5):checked ~ img:nth-of-type(5) {
+      background-color: rgba(0, 0, 0, .3);
+    }
   </style>
 </head>
 <body>
