@@ -36,7 +36,7 @@
     }
 
     .toggle-transition {
-      border: 1px solid red;
+      border: 2px solid red;
       background-color: red;
     }
 
@@ -64,6 +64,7 @@
     let toggle = document.querySelector(".toggle");
     let circle = document.querySelector(".circle");
     let flag = false;
+
     toggle.addEventListener('click', function(){
       if (flag === true) {
         toggle.classList.remove("toggle-transition");
