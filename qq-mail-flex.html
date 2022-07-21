@@ -8,7 +8,7 @@
 
   <style>
     :root {
-      --height-top: 100px;
+      --height-top: 10%;
       --width-aside: 20%;
     }
 
@@ -26,6 +26,7 @@
 
     header {
       height: var(--height-top);
+      min-height: 50px;
       background-color: skyblue;
     }
 
@@ -38,12 +39,14 @@
       padding-top: 25px;
       width: var(--width-aside);
       background-color: steelblue;
+      overflow: auto;
     }
 
     main article {
       flex: 1;
       padding: 25px;
       background-color: cornsilk;
+      overflow: auto;
     }
   </style>
 </head>
