@@ -8,8 +8,7 @@
 
   <style>
     :root {
-      --height-top: 10%;
-      --width-aside: 20%;
+      --padding-text: 1.5em;
     }
 
     html,
@@ -25,27 +24,28 @@
     }
 
     header {
-      height: var(--height-top);
-      min-height: 50px;
+      flex: 1;
+      min-height: 10%;
       background-color: skyblue;
     }
 
     main {
       display: flex;
-      flex: 1;
+      flex: 9;
     }
 
     main aside {
-      padding-top: 25px;
-      width: var(--width-aside);
+      flex: 2;
+      padding-top: var(--padding-text);
       background-color: steelblue;
       overflow: auto;
     }
 
     main article {
-      flex: 1;
-      padding: 25px;
+      flex: 8;
+      padding: var(--padding-text);
       background-color: cornsilk;
+      text-align: justify;
       overflow: auto;
     }
   </style>
@@ -89,6 +89,8 @@
         Sint suscipit dignissimos deleniti tenetur nesciunt fuga libero commodi laudantium laboriosam? Minus deleniti facere cumque nemo ipsa suscipit neque, labore consequuntur quo error qui voluptate consequatur, soluta cum laudantium deserunt.
         Aspernatur, harum at ipsam expedita repellendus voluptates cumque, sapiente cum natus voluptate quod quas. Mollitia provident, illo accusamus rerum neque quasi ratione, quaerat quis eveniet aliquid beatae nemo culpa hic.
         Veritatis, facilis. Dolorem, laborum! Ipsam, debitis tempora, fugiat assumenda minima autem totam et a pariatur quidem tenetur! Aliquam iure perferendis, doloremque, soluta blanditiis illum repellendus sit autem quasi laboriosam voluptates?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, magni animi dolor voluptatibus esse quod iusto perspiciatis nesciunt, molestiae autem consequuntur provident. Vero minima odio tenetur ut illo dicta nemo quisquam reprehenderit soluta, expedita aliquam, assumenda quibusdam necessitatibus repudiandae numquam iusto iure itaque voluptate, rerum laborum delectus ratione iste quis?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse dicta necessitatibus atque cum impedit consequatur laborum nisi hic rem recusandae magni, velit illum sint aperiam quod corrupti illo eum fugiat? Velit, ratione. Nesciunt praesentium, neque omnis molestias tempora perspiciatis numquam vel, laboriosam aspernatur soluta ad quis ipsa, dolor sed. Nihil rerum accusantium quisquam corporis repellendus officia perferendis illum, inventore itaque vel, quia nulla ducimus veniam nobis. Labore mollitia repudiandae nihil repellendus vitae esse blanditiis voluptatibus dicta, a in necessitatibus ipsa!
         </p>
       </article>
     </main>
