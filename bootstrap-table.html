@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* table */
+    .table {
+      border-collapse: collapse;
+    }
+
+    .table tr {
+      padding: .5em;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    .table th,
+    .table td {
+      padding: .5em;
+      text-align: left;
+    }
+
+    .table tbody td:first-child {
+      font-weight: bold;
+    }
+
+    /* table-striped */
+    .table-striped tbody > tr:nth-child(2n + 1) {
+      background-color: #f2f2f2;
+    }
+
+    /* table-sm  */
+    .table-sm tr {
+      padding: .2em;
+      font-size: 14px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    .table-sm th,
+    .table-sm td {
+      padding: .2em;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .table-sm tbody td:first-child {
+      font-weight: bold;
+    }
+  
+    /* table-bordered */
+    .table-bordered {
+      border-collapse: collapse;
+    }
+
+    .table-bordered tr {
+      padding: .5em;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    .table-bordered th,
+    .table-bordered td {
+      padding: .5em;
+      border: 1px solid #dee2e6;
+      text-align: left;
+    }
+
+    .table-bordered tbody td:first-child {
+      font-weight: bold;
+    }
+
+    /* table-borderless */
+    .table-borderless {
+      border-collapse: collapse;
+    }
+
+    .table-borderless tr {
+      padding: .5em;
+      border: none;
+    }
+    
+    .table-borderless th,
+    .table-borderless td {
+      padding: .5em;
+      text-align: left;
+    }
+
+    .table-borderless tbody td:first-child {
+      font-weight: bold;
+    }
+
+    /* table-dark */
+    .table-dark,
+    table.table-dark tr:nth-child(n){
+      color: #fff;
+      background-color: #212529;
+    }
+
+    .table-dark {
+      border-color: #373b3e;
+    }
+
+    /* table-hover */
+    table.table-hover tr:nth-child(n):hover {
+      background-color: grey;
+      color: #000;
+    }
+
+    /* container decoration */
+    .container {
+      display: flex;
+      margin: auto;
+      width: 50%;
+      border: 1px solid #dee2e6;
+    }
+    
+    .choice-list {
+      display: flex;
+      flex-flow: column;
+      flex: 1 0 100px;
+      row-gap: 10px;
+      padding: .5em;
+      border-right: 1px solid #dee2e6;
+      overflow: auto;
+    }
+
+    /* input:nth-child(5):checked ~ .choice-5{
+      border: 2px solid blue;
+    }
+
+
+    input:nth-child(6):checked ~ .choice-6{
+      border: 2px solid blue;
+    } */
+
+    .output {
+      display: flex;
+      flex: 3;
+      /* align-content: center; */
+    }
+
+    table {
+      margin: auto;
+    }
+
+    input {
+      display: none;
+    }
+
+    label {
+      flex: 1;
+      padding: .5em;
+      border: 1px solid grey;
+      text-align: center;
+      background-color: #f9f9fb;
+    }
+
+    .active {
+      border: 2px solid blue;
+    }
+  </style
+</head>
+<body>
+  <div class="container">
+    <div class="choice-list">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+
+      <label class="choice-1 active">Table</label>
+      <label class="choice-2">Small Table</label>
+      <label class="choice-3">Striped Rows</label>
+      <label class="choice-4">Hoverable Rows</label>
+      <label class="choice-5">Bordered Table</label>
+      <label class="choice-6">Borderless Table</label>
+      <label class="choice-7">Dark Mode</label>
+    </div>
+
+    <div class="output">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>Lorem.</th>
+              <th>Facere?</th>
+              <th>Numquam.</th>
+              <th>Atque!</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem.</td>
+              <td>Fugit.</td>
+              <td>Incidunt.</td>
+              <td>Modi?</td>
+            </tr>
+            <tr>
+              <td>Lorem.</td>
+              <td>Accusantium.</td>
+              <td>Porro!</td>
+              <td>Ratione.</td>
+            </tr>
+            <tr>
+              <td>Lorem.</td>
+              <td>Id.</td>
+              <td>Debitis?</td>
+              <td>Delectus!</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let choice1 = document.querySelector('.choice-1');
+    let choice2 = document.querySelector('.choice-2');
+    let choice3 = document.querySelector('.choice-3');
+    let choice4 = document.querySelector('.choice-4');
+    let choice5 = document.querySelector('.choice-5');
+    let choice6 = document.querySelector('.choice-6');
+    let choice7 = document.querySelector('.choice-7');
+    let table = document.querySelector('table');
+
+    choice1.addEventListener("click", function(){
+      this.classList.toggle('active');
+      table.classList.toggle('table')
+    })
+
+    choice2.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.toggle('table-sm');
+    })
+
+    choice3.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.toggle('table-striped');
+    })
+
+    choice4.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.toggle('table-hover');
+      table.classList.remove('table-bordered');
+    })
+
+    choice5.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.remove('table-borderless');
+      table.classList.toggle('table-bordered');
+    })
+
+    choice6.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.remove('table-bordered');
+      table.classList.toggle('table-borderless');
+    })
+
+    choice7.addEventListener("click", function() {
+      this.classList.toggle('active');
+      table.classList.toggle('table-dark');
+    })
+  </script>
+</body>
+</html>
