@@ -13,7 +13,6 @@
     }
 
     .table tr {
-      padding: .5em;
       border-bottom: 1px solid #dee2e6;
     }
     
@@ -27,22 +26,16 @@
       font-weight: bold;
     }
 
-    /* table-striped */
-    .table-striped tbody > tr:nth-child(2n + 1) {
-      background-color: #f2f2f2;
-    }
-
     /* table-sm  */
     .table-sm tr {
-      padding: .2em;
-      font-size: 14px;
+      font-size: 0.825rem;
       border-bottom: 1px solid #dee2e6;
     }
     
     .table-sm th,
     .table-sm td {
       padding: .2em;
-      font-size: 14px;
+      font-size: 0.825rem;
       text-align: left;
     }
 
@@ -54,41 +47,15 @@
     .table-bordered {
       border-collapse: collapse;
     }
-
-    .table-bordered tr {
-      padding: .5em;
-      border-bottom: 1px solid #dee2e6;
-    }
     
     .table-bordered th,
     .table-bordered td {
-      padding: .5em;
       border: 1px solid #dee2e6;
-      text-align: left;
-    }
-
-    .table-bordered tbody td:first-child {
-      font-weight: bold;
     }
 
     /* table-borderless */
-    .table-borderless {
-      border-collapse: collapse;
-    }
-
     .table-borderless tr {
-      padding: .5em;
       border: none;
-    }
-    
-    .table-borderless th,
-    .table-borderless td {
-      padding: .5em;
-      text-align: left;
-    }
-
-    .table-borderless tbody td:first-child {
-      font-weight: bold;
     }
 
     /* table-dark */
@@ -100,6 +67,12 @@
 
     .table-dark {
       border-color: #373b3e;
+    }
+
+    /* table-striped */
+    .table-striped tbody > tr:nth-child(2n + 1) {
+      background-color: #2c3034;
+      color: #fff;
     }
 
     /* table-hover */
@@ -127,12 +100,12 @@
     }
 
     /* input:nth-child(5):checked ~ .choice-5{
-      border: 2px solid blue;
+      border: 2px solid #0085f2;
     }
 
 
     input:nth-child(6):checked ~ .choice-6{
-      border: 2px solid blue;
+      border: 2px solid #0085f2;
     } */
 
     .output {
@@ -158,7 +131,7 @@
     }
 
     .active {
-      border: 2px solid blue;
+      border: 2px solid #0085f2;
     }
   </style
 </head>
@@ -244,18 +217,27 @@
     choice4.addEventListener("click", function() {
       this.classList.toggle('active');
       table.classList.toggle('table-hover');
-      table.classList.remove('table-bordered');
     })
 
     choice5.addEventListener("click", function() {
+
+      if (choice6.classList.contains('active')) {
+        choice6.classList.remove('active');
+        table.classList.remove('table-borderless');
+      }
+
       this.classList.toggle('active');
-      table.classList.remove('table-borderless');
       table.classList.toggle('table-bordered');
     })
 
     choice6.addEventListener("click", function() {
+
+      if (choice5.classList.contains('active')) {
+        choice5.classList.remove('active');
+        table.classList.remove('table-bordered');
+      }
+
       this.classList.toggle('active');
-      table.classList.remove('table-bordered');
       table.classList.toggle('table-borderless');
     })
 
