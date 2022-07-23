@@ -7,6 +7,23 @@
   <title>Document</title>
 
   <style>
+    @media screen and (max-width: 347px) {
+      .container {
+        display: flex;
+        width: 100%;
+        border: 1px solid #dee2e6;
+      }
+    }
+
+    @media screen and (min-width: 347px) {
+      .container {
+        display: flex;
+        margin: auto;
+        width: 80%;
+        border: 1px solid #dee2e6;
+      }
+    }
+
     /* table */
     .table {
       border-collapse: collapse;
@@ -82,52 +99,42 @@
     }
 
     /* container decoration */
-    .container {
-      display: flex;
-      margin: auto;
-      width: 50%;
-      border: 1px solid #dee2e6;
-    }
-    
     .choice-list {
       display: flex;
       flex-flow: column;
-      flex: 1 0 100px;
-      row-gap: 10px;
-      padding: .5em;
+      flex: 1 1 auto;
+      row-gap: 0.8em;
+
+      min-width: 6em;
+      padding: 1.5em .8em;
       border-right: 1px solid #dee2e6;
       overflow: auto;
     }
 
-    /* input:nth-child(5):checked ~ .choice-5{
-      border: 2px solid #0085f2;
-    }
-
-
-    input:nth-child(6):checked ~ .choice-6{
-      border: 2px solid #0085f2;
-    } */
-
-    .output {
-      display: flex;
-      flex: 3;
-      /* align-content: center; */
-    }
-
-    table {
-      margin: auto;
-    }
-
-    input {
-      display: none;
-    }
-
-    label {
+    .choice-1,
+    .choice-2,
+    .choice-3,
+    .choice-4,
+    .choice-5,
+    .choice-6,
+    .choice-7 {
       flex: 1;
-      padding: .5em;
+      padding: .5em .4em;
       border: 1px solid grey;
       text-align: center;
       background-color: #f9f9fb;
+    }
+
+    .output {
+      display: flex;
+      flex: 3 auto;
+      padding: 1em;
+      overflow: auto;
+    }
+
+    table {
+      flex: 1 0;
+      margin: auto;
     }
 
     .active {
@@ -137,26 +144,20 @@
 </head>
 <body>
   <div class="container">
-    <div class="choice-list">
-      <input type="checkbox">
-      <input type="checkbox">
-      <input type="checkbox">
-      <input type="checkbox">
-      <input type="checkbox">
-      <input type="checkbox">
-      <input type="checkbox">
 
-      <label class="choice-1 active">Table</label>
-      <label class="choice-2">Small Table</label>
-      <label class="choice-3">Striped Rows</label>
-      <label class="choice-4">Hoverable Rows</label>
-      <label class="choice-5">Bordered Table</label>
-      <label class="choice-6">Borderless Table</label>
-      <label class="choice-7">Dark Mode</label>
+    <div class="choice-list">
+      <div class="choice-1 active">Table</div>
+      <div class="choice-2">Small Table</div>
+      <div class="choice-3">Striped Rows</div>
+      <div class="choice-4">Hoverable Rows</div>
+      <div class="choice-5">Bordered Table</div>
+      <div class="choice-6">Borderless Table</div>
+      <div class="choice-7">Dark Mode</div>
     </div>
 
     <div class="output">
       <table class="table">
+
           <thead>
             <tr>
               <th>Lorem.</th>
@@ -165,6 +166,7 @@
               <th>Atque!</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>Lorem.</td>
@@ -185,6 +187,7 @@
               <td>Delectus!</td>
             </tr>
           </tbody>
+
       </table>
     </div>
   </div>
