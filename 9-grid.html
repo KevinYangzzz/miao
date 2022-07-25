@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    :root {
+      --cell-width: 50px;
+      --cell-height: 50px;
+      --cell-bd-width: 5px;
+    }
+
+    .container {
+      display: flex;
+      flex-flow: wrap;
+      /* gap: 5px; */
+
+      margin: 1em auto;
+      width: calc(var(--cell-width) * 3 + var(--cell-bd-width) * 4);
+      /* border: skyblue solid 5px; */
+    }
+
+    .container > div {
+      position: relative;
+      margin: -5px 0 0 -5px;
+      width: var(--cell-width);
+      height: var(--cell-height);
+      text-align: center;
+      line-height: var(--cell-height);
+      border: skyblue solid 5px;
+      border-collapse: collapse;
+    }
+
+    .container > div:hover {
+      border-color: blue;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cell1">1</div>
+    <div class="cell2">2</div>
+    <div class="cell3">3</div>
+    <div class="cell4">4</div>
+    <div class="cell5">5</div>
+    <div class="cell6">6</div>
+    <div class="cell7">7</div>
+    <div class="cell8">8</div>
+    <div class="cell9">9</div>
+  </div>
+</body>
+</html>
