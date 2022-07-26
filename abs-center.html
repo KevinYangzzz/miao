@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body > div {
+      margin: 1em auto;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+      background-color: #ccc;
+
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: cornsilk;
+      line-height: 200px;
+    }
+
+    .container_1 .box {
+      display: flow-root;
+      margin: 50% auto;
+      transform: translateY(-50%);
+    }
+
+    .container_2 {
+      text-align: center;
+      line-height: 300px;
+    }
+
+    .container_3 {
+      position: relative;
+    }
+
+    .container_3 .box {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+
+      line-height: initial;
+    }
+
+    .container_3 .box span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+    .container_4 {
+      display: flex;
+    }
+
+    .container_4 .box {
+      display: flex;
+      margin: auto;
+    }
+
+    .container_4 span {
+      margin: auto;
+      line-height: initial;
+    }
+
+    .container_5 {
+      display: grid;
+      place-content: center;
+      place-items: center;
+    }
+
+    .container_5 .box {
+      display: grid;
+      line-height: initial;
+    }
+
+    .container_5 span {
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container_1">
+    <div class="box">margin + transform</div>
+  </div>
+
+  <div class="container_2">
+    margin + line-height
+  </div>
+
+  <div class="container_3">
+    <div class="box">
+      <span>
+        position + margin / transform
+      </span>
+    </div>
+  </div>
+
+  <div class="container_4">
+    <div class="box">
+      <span class="text">
+        flex + (margin) / (justify-content + align-items)
+      </span>
+    </div>
+  </div>
+
+  <div class="container_5">
+    <div class="box">
+      <span>
+        grid, similar to the above flex layout
+      </span>
+    </div>
+  </div>
+</body>
+</html>
