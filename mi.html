@@ -234,6 +234,9 @@
 
     .nav-content li {
       padding: 0;
+    }
+
+    .nav-content li span {
       cursor: pointer;
     }
 
@@ -426,6 +429,7 @@
       height: 170px;
       background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/290270b6fc499fc5fcb653417e99fe91.jpg?w=632&h=340);
       background-size: contain;
+      cursor: pointer;
     }
 
     .home-hero li:first-child {
@@ -515,9 +519,7 @@
       <img src="https://s02.mifile.cn/assets/static/image/logo-mi2.png" alt="" width="56px">
 
       <ul>
-        <li>
-          iPhone
-        </li>
+        <li>iPhone</li>
         <li>华为手机</li>
         <li>小天才电话手表</li>
         <li>电视</li>
@@ -671,9 +673,9 @@
 
     let navLi = document.querySelector('nav li');
     let navContent = document.querySelector('.nav-content');
+    let navTimeOut;
 
     let searchbox = document.querySelector('nav .search input');
-    console.log(searchbox);
 
     for (i of indicators) {
       i.addEventListener('click', function(event){
@@ -719,10 +721,23 @@
 
     navLi.addEventListener('mouseenter', function(){
       navContent.style.display = 'flex';
+      navLi.style.color = ' #ff6700';
     })
 
     navLi.addEventListener('mouseleave', function(){
+      navTimeOut = setTimeout(function(){navContent.style.display = 'none'}, 1000);
+      navLi.style.color = ' #000';
+    })
+
+    navContent.addEventListener('mouseenter', function(){
+      clearTimeout(navTimeOut);
+      navContent.style.display = 'flex';
+      navLi.style.color = ' #ff6700';
+    })
+
+    navContent.addEventListener('mouseleave', function(){
       navContent.style.display = 'none';
+      navLi.style.color = ' #000';
     })
 
     let searchArr = ['头孢', '啤酒', '头孢加啤酒'];
@@ -731,6 +746,56 @@
       number === searchArr.length - 1 ? number = 0 : number += 1;
       searchbox.placeholder = searchArr[number];
     }, 1000)
+
+
+    let siteCategoryLi = document.querySelectorAll('.site-category > li');
+    let siteContent = document.querySelectorAll('.site-content');
+    let siteTimeout;
+
+    siteCategoryLi[0].addEventListener('mouseenter', function(){
+      siteContent[0].style.display = 'grid';
+      siteCategoryLi[0].style.backgroundColor = '#ff6700';
+    })
+
+    siteCategoryLi[0].addEventListener('mouseleave', function(){
+      siteTimeout = setTimeout(function(){
+        siteContent[0].style.display = 'none';
+      }, 1000)
+    })
+
+    siteContent[0].addEventListener('mouseenter', function(){
+      clearTimeout(siteTimeout);
+      siteContent[0].style.display = 'grid';
+      siteCategoryLi[0].style.backgroundColor = '#ff6700';
+    })
+
+    siteContent[0].addEventListener('mouseleave', function(){
+      siteContent[0].style.display = 'none';
+      siteCategoryLi[0].style.backgroundColor = 'transparent';
+    })
+    
+    siteCategoryLi[1].addEventListener('mouseenter', function(){
+      siteContent[1].style.display = 'grid';
+      siteCategoryLi[1].style.backgroundColor = '#ff6700';
+    })
+
+    siteCategoryLi[1].addEventListener('mouseleave', function(){
+      siteTimeout = setTimeout(function(){
+        siteContent[1].style.display = 'none';
+      }, 1000)
+    })
+
+    siteContent[1].addEventListener('mouseenter', function(){
+      clearTimeout(siteTimeout);
+      siteContent[1].style.display = 'grid';
+      siteCategoryLi[1].style.backgroundColor = '#ff6700';
+    })
+
+    siteContent[1].addEventListener('mouseleave', function(){
+      siteContent[1].style.display = 'none';
+      siteCategoryLi[1].style.backgroundColor = 'transparent';
+    })
+    
     </script>
 </body>
 </html>
