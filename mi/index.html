@@ -321,9 +321,6 @@
       position: relative;
       justify-content: space-between;
       padding: 1em 2em;
-      width: 234px;
-      height: 53px;
-      box-sizing: border-box;
     }
 
     .site-category > li span {
@@ -629,8 +626,9 @@
 
     .home-brick-flex .cell8 {
       display: inline-flex;
-      gap: 14px 10px;
-      justify-content: space-evenly;
+      align-content: space-between;
+      justify-content: end;
+
       width: 988px;
       height: 614px;
       flex-wrap: wrap;
@@ -646,7 +644,7 @@
     .home-brick-flex .cell8 > li {
       display: flex;
       flex-direction: column;
-      /* flex: 1; */
+      margin: 0 auto;
       width: 234px;
       height: 300px;
       font-size: 14px;
@@ -943,9 +941,15 @@
         <li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8259e8fb355acf168c66f75d375c6af.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt=""><span>Xiaomi watch S1</span><span>蓝宝石玻璃背面 | 不锈钢中框 | 1.43</span><span>0元起</span></li>
         <li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8259e8fb355acf168c66f75d375c6af.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt=""><span>Xiaomi watch S1</span><span>蓝宝石玻璃背面 | 不锈钢中框 | 1.43</span><span>0元起</span></li>
         <li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8259e8fb355acf168c66f75d375c6af.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt=""><span>Xiaomi watch S1</span><span>蓝宝石玻璃背面 | 不锈钢中框 | 1.43</span><span>0元起</span></li>
-        <li><span><span>浏览更多<br></span><span>热门</span></span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
-        </svg></li>
+        <li>
+          <span>
+            <span>浏览更多<br></span>
+            <span>热门</span>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+          </svg>
+        </li>
       </div>
     </div>
   </div>
@@ -958,14 +962,9 @@
     let rightArrow = document.querySelector('.arrow-right');
     let radioIndex;
 
-    let navLi = document.querySelector('nav li');
-    let navContent = document.querySelector('.nav-content');
-    let navTimeOut;
-
-    let searchbox = document.querySelector('nav .search input');
-
     for (i of indicators) {
       i.addEventListener('click', function(event){
+
         for (j of sliderImg) {
           j.classList.remove('show-img');
         }
@@ -1008,62 +1007,12 @@
 
     let searchArr = ['头孢', '啤酒', '头孢加啤酒'];
     let number = 0;
+    let searchbox = document.querySelector('nav .search input');
+    
     setInterval(function(){
       number === searchArr.length - 1 ? number = 0 : number += 1;
       searchbox.placeholder = searchArr[number];
     }, 1000)
-
-
-    let siteCategoryLi = document.querySelectorAll('.site-category > li');
-    let siteContent = document.querySelectorAll('.site-content');
-    let siteTimeout;
-
-    // siteCategoryLi[0].addEventListener('mouseenter', function(){
-    //   siteContent[0].style.display = 'grid';
-    //   siteCategoryLi[0].style.backgroundColor = '#ff6700';
-    //   siteCategoryLi[1].style.backgroundColor = 'transparent';
-    // })
-
-    // siteCategoryLi[0].addEventListener('mouseleave', function(){
-    //   siteTimeout = setTimeout(function(){
-    //     siteContent[0].style.display = 'none';
-    //   }, 1000)
-    // })
-
-    // siteContent[0].addEventListener('mouseenter', function(){
-    //   clearTimeout(siteTimeout);
-    //   siteContent[0].style.display = 'grid';
-    //   siteCategoryLi[0].style.backgroundColor = '#ff6700';
-    // })
-
-    // siteContent[0].addEventListener('mouseleave', function(){
-    //   siteContent[0].style.display = 'none';
-    //   siteCategoryLi[0].style.backgroundColor = 'transparent';
-    // })
-    
-    // siteCategoryLi[1].addEventListener('mouseenter', function(){
-    //   siteContent[1].style.display = 'grid';
-    //   siteCategoryLi[1].style.backgroundColor = '#ff6700';
-    //   siteCategoryLi[0].style.backgroundColor = 'transparent';
-    // })
-
-    // siteCategoryLi[1].addEventListener('mouseleave', function(){
-    //   siteTimeout = setTimeout(function(){
-    //     siteContent[1].style.display = 'none';
-    //   }, 1000)
-    // })
-
-    // siteContent[1].addEventListener('mouseenter', function(){
-    //   clearTimeout(siteTimeout);
-    //   siteContent[1].style.display = 'grid';
-    //   siteCategoryLi[1].style.backgroundColor = '#ff6700';
-    // })
-
-    // siteContent[1].addEventListener('mouseleave', function(){
-    //   siteContent[1].style.display = 'none';
-    //   siteCategoryLi[1].style.backgroundColor = 'transparent';
-    // })
-    
-    </script>
+  </script>
 </body>
 </html>
