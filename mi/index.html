@@ -615,7 +615,7 @@
       border-bottom: 1px solid #ff6700;
     }
 
-    .home-brick-flex .two-cell {
+    .home-brick-flex .two-cells {
       display: inline-block;
       width: 234px;
       height: 614px;
@@ -644,7 +644,7 @@
     .home-brick-flex .cell8 > li {
       display: flex;
       flex-direction: column;
-      margin: 0 auto;
+      margin: 0 0 0 auto;
       width: 234px;
       height: 300px;
       font-size: 14px;
@@ -698,7 +698,168 @@
     }
 
     .home-brick-flex .cell8 li:hover,
-    .home-brick-flex .two-cell:hover {
+    .home-brick-flex .two-cells:hover {
+      transform: translateY(-5px);
+      box-shadow: 2px 10px 10px #ccc, -2px 10px 10px #ccc;
+    }
+
+    .home-brick-float {
+      margin-top: 40px;
+      display: flow-root;
+      /* overflow: auto; */
+    }
+
+    .home-brick-float .row {
+      display: flex;
+      margin-bottom: 10px;
+      font-family: Arial;
+      font-weight: 200;
+    }
+
+    .home-brick-float .row > span:first-child {
+      margin-right: auto;
+      font-size: 22px;
+    }
+
+    .home-brick-float .row > span:nth-child(2) {
+      color: #ff6700;
+      border-bottom: 1px solid #ff6700;
+    }
+
+    .home-brick-float .two-cells {
+      float: left;
+      width: 234px;
+      height: 614px;
+      background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e9896934bb657c3dd0c548952eb27481.jpg?thumb=1&w=468&h=1228&f=webp&q=90);
+      background-size: contain;
+      transition: transform .5s;
+    }
+
+    .home-brick-float .cell8 {
+      width: calc(1227px - 234px - 15px);
+      height: 614px;
+      float: right;
+    }
+
+    .home-brick-float .cell8 li {
+      float: left;
+      width: 234px;
+      height: 300px;
+      text-align: center;
+      background-color: #fff;
+
+      font-size: 14px;
+    }
+
+    .home-brick-float .cell8 li *:not(:nth-last-child(-n + 2)) {
+      display: block;
+    }
+
+    .home-brick-float .cell8 li:nth-child(-n + 3), 
+    .home-brick-float .cell8 li:nth-child(n + 5):not(:last-child) {
+      margin-right: 14px;
+    }
+
+    .home-brick-float .cell8 li:nth-child(-n + 4) {
+      margin-bottom: 13px;
+    }
+
+    .home-brick-float .cell8 li:nth-child(-n + 7) {
+      box-sizing: border-box;
+      padding: 30px 0;
+      transition: transform .5s;
+    }
+ 
+    .home-brick-float .cell8 li img {
+      margin: 0 auto;
+      width: 160px;
+      height: 160px;
+    }
+
+    .home-brick-float .cell8 li span:nth-of-type(2) {
+      margin: 5px 0 10px 0;
+      font-size: 12px;
+      color: #b0b0b0;
+    }
+
+    .home-brick-float .cell8 li span:nth-of-type(3) {
+      color: #ff6700;
+    }
+
+    .home-brick-float .cell8 li del {
+      color: #b0b0b0;
+    }
+
+    .home-brick-float .cell8 li:last-child {
+      background-color: #f5f5f5;
+    }
+
+    .home-brick-float .cell8 li:last-child .show-small,
+    .home-brick-float .cell8 li:last-child .more {
+      width: 234px;
+      height: 140px;
+      background-color: #fff;
+      transition: transform .5s;
+    }
+
+    .home-brick-float .cell8 li:last-child .show-small {
+      margin-bottom: 20px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .home-brick-float .cell8 li:last-child .show-small > div {
+      float: left;
+      margin: 70px 0 0 10px;
+      transform: translateY(-50%);
+      text-align-last: left;
+
+      font-size: 14px;
+    }
+
+    .home-brick-float .cell8 li:last-child .show-small > div div:last-child {
+      color: #ff6700;
+    }
+
+    .home-brick-float .cell8 li:last-child .show-small img {
+      float: right;
+      width: 80px;
+      height: 80px;
+      margin: 70px 0 0 0;
+      transform: translateY(-50%);
+    }
+
+    .home-brick-float .cell8 li:last-child .more{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      column-gap: 40px;
+    }
+
+    .home-brick-float .cell8 li:last-child > .more span {
+      margin: 0;
+    }
+
+    .home-brick-float .cell8 li:last-child > .more span:first-child {
+      font-size: 20px;
+    }
+
+    .home-brick-float .cell8 li:last-child > .more span:nth-child(2) {
+      margin-left: -50px;
+      font-size: 14px;
+    }
+
+    .home-brick-float .cell8 li:last-child svg {
+      width: 60px;
+      height: 60px;
+      fill: #ff6700;
+    }
+
+    .home-brick-float .cell8 li:nth-child(-n + 7):hover, 
+    .home-brick-float .two-cells:hover, 
+    .home-brick-float .cell8 li:last-child .show-small:hover, 
+    .home-brick-float .cell8 li:last-child .more:hover{
       transform: translateY(-5px);
       box-shadow: 2px 10px 10px #ccc, -2px 10px 10px #ccc;
     }
@@ -930,7 +1091,7 @@
         <span>热门</span>
         <span>穿戴</span>
       </div>
-      <div class="two-cell">
+      <div class="two-cells">
 
       </div>
       <div class="cell8">
@@ -952,7 +1113,89 @@
         </li>
       </div>
     </div>
+
+    <div class="home-brick-float wrap">
+      <div class="row">
+        <span>Float</span>
+        <span>热门</span>
+      </div>
+
+      <div class="two-cells"></div>
+
+      <div class="cell8">
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/01d9571051a91e540e5c644fa60cc858.jpg?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+          <span>Pro 14 增强版 i5 独显 - Win11</span>
+          <span>2.5K超视网膜全面屏</span>
+          <span>9999元</span>
+          <del>2999元</del>
+        </li>
+        <li>
+          <div class="show-small">
+            <div>
+              <div>Redmi显示器</div>
+              <div>23.8英寸</div>
+              <div>599元</div>
+            </div>
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7c37478d8b3b553ba0a50adaec2fc775.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+          </div>
+          <div class="more">
+            <div>
+              <span>浏览更多<br></span>
+              <span>热门</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </li>
+      </div>
+    </div>
   </div>
+
+    
 
   <script>
     let sliderImg = document.querySelectorAll('.slider > img');
