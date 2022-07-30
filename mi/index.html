@@ -28,6 +28,14 @@
       clear: both;
     }
 
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+
     #app {
       width: 100%;
       min-width: 1080px;
@@ -229,10 +237,17 @@
       box-sizing: border-box;
     }
 
+    nav .search a:hover {
+      background-color: #ff6700;
+    }
+
+    nav .search a:hover .icon_search {
+      stroke: #fff;
+    }
+
     nav .search .icon_search {
       width: 20px;
     }
-
 
     nav .nav-content {
       position: absolute;
@@ -253,7 +268,7 @@
       font-size: 0;
       text-align: center;
 
-      transition: height .5s, font-size 0s, border-top .1s .5s;
+      transition: height .5s, font-size, border-top;
     }
 
     .nav-content li {
@@ -279,7 +294,6 @@
 
     .nav-content span {
       display: block;
-      /* margin-bottom: -35px; */
       color: #000;
     }
 
@@ -982,7 +996,6 @@
     }
 
     .footer .footer-links-items {
-      display: inline-block;
       float: left;
       padding: 0 0 0 150px;
       margin-bottom: 40px;
@@ -1070,19 +1083,38 @@
       color: #b0b0b0;
     }
 
-    .footer-info-text > p:last-of-type {
-      color: #000;
-      background-color: #c6c6c6;
-    }
-
     .footer-slogan {
       margin-top: 30px;
+      background-color: #f5f5f5;
       color: #cbcbcb;
       text-align: center;
       font-family: 宋体;
       font-weight: bold;
       letter-spacing: 4px;
       line-height: 47px;
+    }
+
+    .home-toolbar {
+      position: fixed;
+      top: 65%;
+      right: 4.6%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+    }
+
+    .home-toolbar img{
+      margin-top: -1px;
+      width: 20px;
+      height: 20px;
+      padding: 10px 5px;
+      border: 1px solid #e0e0e0;
+      border-left: none;
+      cursor: pointer;
+    }
+
+    .home-toolbar img:last-child {
+      border-top: none;
     }
   </style>
 </head>
@@ -1189,7 +1221,7 @@
 
         <div class="site-category">
           <li>
-            <span>麻袋</span>
+            <span>尿素麻袋</span>
             <span>></span>
             <ul class="site-content">
                 <li><a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b883131e62133041d7ac8272c17762b0.png?thumb=1&w=80&h=80&f=webp&q=90" alt="">Xiaomi 12S 萎靡不振版</a></li>
@@ -1220,7 +1252,7 @@
           </li>
 
           <li>
-            <span>麻袋</span>
+            <span>尿素麻袋</span>
             <span>></span>
             <ul class="site-content">
               <li><a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab4a67cfa9b5c4839b83c342d6a9a469.png?thumb=1&w=80&h=80&f=webp&q=90" alt="">小米运动手环</a></li>
@@ -1242,12 +1274,12 @@
           </li>
           
 
-          <li><span>麻袋</span><span>></span></li>
-          <li><span>麻袋</span><span>></span></li>
-          <li><span>麻袋</span><span>></span></li>
-          <li><span>麻袋</span><span>></span></li>
-          <li><span>麻袋</span><span>></span></li>
-          <li><span>麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
+          <li><span>尿素麻袋</span><span>></span></li>
         </div>
       </div>
 
@@ -1570,6 +1602,16 @@
     <p class="footer-slogan">
       我们绝对不会期待米粉的期待
     </p>
+
+    <div class="home-toolbar">
+      <img src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png" alt="">
+      <img src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png" alt="">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png" alt="">
+      <img src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png" alt="">
+      <img src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png" alt="">
+
+      <img src="https://i1.mifile.cn/f/i/2018/home/totop.png" alt="" class="hide">
+    </div>
   </div>
 
   
@@ -1633,6 +1675,23 @@
       number === searchArr.length - 1 ? number = 0 : number += 1;
       searchbox.placeholder = searchArr[number];
     }, 1000)
+
+
+    let backToTop = document.querySelectorAll(".home-toolbar img");
+
+    window.addEventListener('scroll', function(){
+      if (document.documentElement.scrollTop >= 1000) {
+        backToTop[backToTop.length - 1].className = 'show';
+        console.log(1);
+      } else {
+        backToTop[backToTop.length - 1].className = 'hide';
+        console.log(0);
+      }
+    })
+
+    backToTop[backToTop.length - 1].addEventListener('click', function(){
+      document.documentElement.scrollTop = 0;
+    })
   </script>
 </body>
 </html>
