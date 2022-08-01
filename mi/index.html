@@ -1695,16 +1695,24 @@
     window.addEventListener('scroll', function(){
       if (document.documentElement.scrollTop >= 1000) {
         backToTop[backToTop.length - 1].className = 'show';
-        console.log(1);
       } else {
         backToTop[backToTop.length - 1].className = 'hide';
-        console.log(0);
       }
     })
 
     backToTop[backToTop.length - 1].addEventListener('click', function(){
       document.documentElement.scrollTop = 0;
     })
-  </script>
+
+    let test = document.querySelector('.site-category li');
+    let slider = document.querySelector('.slider');
+    function cursorPosition(element) {
+      element.addEventListener('mousemove', function(e){
+        console.log(e.clientX); 
+      })
+    }
+
+    cursorPosition(test);
+</script>
 </body>
 </html>
